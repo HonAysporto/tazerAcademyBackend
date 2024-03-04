@@ -36,7 +36,7 @@ const signinuser = (req, res) => {
                     res.send({status: false, message: "Wrong credentials"} )
                 } else {
                     // console.log('User found');
-                   let token =  jwt.sign({email}, "secret", {expiresIn:"6s"})
+                   let token =  jwt.sign({email}, "secret", {expiresIn:"6m"})
                     console.log(token);
                     res.send({status: true, message: "Hurray user found", token})
                 }
