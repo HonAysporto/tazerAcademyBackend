@@ -3,6 +3,7 @@
 const express = require('express')
 const app = express()
 let studentRouter = require('./routes/student.route')
+let adminRouter = require('./routes/admin.route')
 const cors = require('cors');
 const {Mongoose,  default: mongoose} = require('mongoose')
 
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.urlencoded({extended:true, limit:"50mb"}))
 app.use(express.json({limit:"50mb"}))
 app.use("/student", studentRouter)
+app.use('/admin', adminRouter)
 
 
 
